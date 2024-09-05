@@ -29,8 +29,6 @@ public class AcornBounce : MonoBehaviour
             Vector2 bounce = Vector2.up * bounceForce;
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(bounce, ForceMode2D.Impulse); // .Force .Impulse .Acceleration .VelocityChange
-
-            //Invoke("AutoBounce", 2f);
         }
     }
 
@@ -38,7 +36,6 @@ public class AcornBounce : MonoBehaviour
     {
         Invoke("BounceForceCD", 2f);
         canBounceForce = false;
-        Debug.Log("bons");
         Vector2 bounce = Vector2.up * bounceForce;
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(bounce, ForceMode2D.Impulse); // .Force .Impulse .Acceleration .VelocityChange

@@ -7,6 +7,8 @@ TagManager:
   - Spike
   - WinningPlatform
   - Platform
+  - Key
+  - Door
   layers:
   - Default
   - TransparentFX
