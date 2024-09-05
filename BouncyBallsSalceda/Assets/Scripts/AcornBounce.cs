@@ -8,6 +8,7 @@ public class AcornBounce : MonoBehaviour
     private Rigidbody2D rb;
     public bool canBounceForce;
 
+
     private void Start()
     {
         canBounceForce = true;
@@ -36,6 +37,7 @@ public class AcornBounce : MonoBehaviour
     {
         Invoke("BounceForceCD", 2f);
         canBounceForce = false;
+
         Vector2 bounce = Vector2.up * bounceForce;
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(bounce, ForceMode2D.Impulse); // .Force .Impulse .Acceleration .VelocityChange
@@ -45,6 +47,4 @@ public class AcornBounce : MonoBehaviour
     {
         canBounceForce = true;
     }
-
-
 }
