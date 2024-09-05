@@ -9,6 +9,7 @@ TagManager:
   - Platform
   - Key
   - Door
+  - Acorn
   layers:
   - Default
   - TransparentFX
