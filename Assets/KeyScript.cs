@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyObtain : MonoBehaviour
+public class KeyScript : MonoBehaviour
 {
     private DoorEnter doorEnter;
 
@@ -13,10 +13,10 @@ public class KeyObtain : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Key"))
+        if (collision.CompareTag("Player") || collision.CompareTag("Acorn"))
         {
             doorEnter.canEnter = true;
-            collision.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 }
