@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class SceneManagerScript : MonoBehaviour
 {
-    public GameObject pausePanel;
-    public Animator circleTransition;
+    //public GameObject pausePanel;
+    //public Animator circleTransition;
 
     private void Start()
     {
@@ -24,29 +23,35 @@ public class SceneManagerScript : MonoBehaviour
 
     }
 
-    IEnumerator LoadNextSceneTransition()
-    {
-        circleTransition.SetTrigger("End");
+    //IEnumerator LoadNextSceneTransition()
+    //{
+    //    circleTransition.SetTrigger("End");
 
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = currentSceneIndex + 1;
+    //    int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+    //    int nextSceneIndex = currentSceneIndex + 1;
 
-        // Ensure the next scene index is valid
-        yield return new WaitForSeconds(1.5f);
+    //    // Ensure the next scene index is valid
+    //    yield return new WaitForSeconds(1.5f);
 
 
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-        {
-            SceneManager.LoadScene(nextSceneIndex);
-        }
-    }
+    //    if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+    //    {
+    //        SceneManager.LoadScene(nextSceneIndex);
+    //    }
+    //}
+
+    //public void LoadNextScene()
+    //{
+    //    StartCoroutine(LoadNextSceneTransition());
+    //}
 
     public void LoadNextScene()
     {
-        StartCoroutine(LoadNextSceneTransition());
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadScene(nextSceneIndex);
     }
 
-    public void ReloadCurrentScene()
+    public void Restart()
     {
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
@@ -54,7 +59,7 @@ public class SceneManagerScript : MonoBehaviour
 
     public void Pause()
     {
-        pausePanel.SetActive(true);
+        //pausePanel.SetActive(true);
         Time.timeScale = 0f;
 
     }
@@ -62,7 +67,7 @@ public class SceneManagerScript : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1;
-        pausePanel.SetActive(false);
+        //pausePanel.SetActive(false);
     }
 
     public void QuitGame()

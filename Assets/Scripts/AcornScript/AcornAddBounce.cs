@@ -17,7 +17,7 @@ public class AcornAddBounce : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && canBounceForce)
+        if (Input.GetKeyDown(KeyCode.P) && canBounceForce)
         {
             AddBounceForce();
         }

@@ -9,41 +9,21 @@ public class DoorEnter : MonoBehaviour
     //public Animator transitionAnim;
     private SceneManagerScript sceneManager;
 
-
     private void Start()
     {
         canEnter = false;
-        sceneManager = GameObject.Find("SceneManager").GetComponent<SceneManagerScript>();
+        sceneManager = GameObject.Find("UI_Canvas").GetComponent<SceneManagerScript>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && canEnter)
         {
+            //ShrinkPlayer shrinkPlayer = GameObject.Find("PlayerAndAcorn").GetComponent<ShrinkPlayer>();
+            //shrinkPlayer.canShrink = true;
             sceneManager.LoadNextScene();
         }
     }
 
-    //IEnumerator LoadNextSceneTransition()
-    //{
-    //    Debug.Log("sdas");
 
-    //    int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-    //    int nextSceneIndex = currentSceneIndex + 1;
-
-    //    // Ensure the next scene index is valid
-
-    //    transitionAnim.SetTrigger("End");
-    //    yield return new WaitForSeconds(2f);
-
-    //    if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-    //    {
-    //        SceneManager.LoadScene(nextSceneIndex);
-    //    }
-    //}
-
-    //public void LoadNextScene()
-    //{
-    //    StartCoroutine(LoadNextSceneTransition());
-    //}
 }

@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBounceForce: 0
-  bounceForce: 6
+  bounceForce: 10
 --- !u!1 &7734099379794024751
 GameObject:
   m_ObjectHideFlags: 0
