@@ -15,6 +15,8 @@ public class AcornMovement : MonoBehaviour
     void Update()
     {
         float movementX = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(movementX * moveSpeed, rb.velocity.y);
+        
+        if(movementX != 0f)
+            rb.velocity = new Vector2(movementX * moveSpeed, rb.velocity.y);
     }
 }

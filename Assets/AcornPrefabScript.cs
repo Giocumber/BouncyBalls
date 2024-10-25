@@ -12,6 +12,12 @@ public class AcornPrefabScript : MonoBehaviour
 
     private void DestroyAcorn()
     {
-        Destroy(gameObject);
+        Destroy(gameObject); 
+    }
+
+    private void Update()
+    {
+        if(transform.position.y < -8f)
+            Destroy(gameObject);
     }
 }
