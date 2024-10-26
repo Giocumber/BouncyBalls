@@ -53,4 +53,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/L15.unity
     guid: 1c344437a544bd14c9fecca2104bc66b
+  - enabled: 1
+    path: Assets/Scenes/EndScene 1.unity
+    guid: 1b51a77c79647eb44a4d3f63b15d6ece
+  - enabled: 1
+    path: Assets/Scenes/EndScene 2.unity
+    guid: 786de48165915ec47b9ffd70ee657432
   m_configObjects: {}
