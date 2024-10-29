@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.IO;
 
 public class FeedbackInputManager : MonoBehaviour
 {
@@ -10,7 +9,8 @@ public class FeedbackInputManager : MonoBehaviour
     public TMP_Text characterCounterText;
     public int maxCharacters = 250;
 
-    public FeedbackOutputManager feedbackOutputManager;
+    //public FeedbackOutputManager feedbackOutputManager;
+    public NameInputManager nameInputManager;
 
     void Start()
     {
@@ -20,6 +20,7 @@ public class FeedbackInputManager : MonoBehaviour
 
         feedbackInputField.onValueChanged.AddListener(delegate { UpdateCharacterCount(); });
     }
+
     void UpdateCharacterCount()
     {
         // Update the text to show current character count vs maximum allowed
@@ -32,6 +33,7 @@ public class FeedbackInputManager : MonoBehaviour
         else
             characterCounterText.color = HexCodeColor("#F2F2F2");
     }
+
     private void OnDestroy()
     {
         // Unsubscribe when the object is destroyed to prevent memory leaks
@@ -44,7 +46,7 @@ public class FeedbackInputManager : MonoBehaviour
 
         if (!string.IsNullOrEmpty(feedbackText))
         {
-            feedbackOutputManager.CreateFeedbackCard(feedbackText);
+            nameInputManager.playerFeedback = feedbackText;
             feedbackInputField.text = ""; // Clear input after submission
         }
     }

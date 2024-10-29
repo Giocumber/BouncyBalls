@@ -7,6 +7,7 @@ using System.IO;
 public class FeedbackOutputManager : MonoBehaviour
 {
     private TMP_Text feedbackDisplayText; // TextMeshPro Text for displaying feedback
+    private TMP_Text playerNameDisplayText; // TextMeshPro Text for displaying playername
 
     public GameObject feedbackCardPrefab;
     public GameObject contentParentObject;
@@ -30,26 +31,20 @@ public class FeedbackOutputManager : MonoBehaviour
             feedbackTitle.text = "Feedbacks!";
     }
 
-    //private void LoadFeedback()
-    //{
-    //    if (File.Exists(feedbackFilePath))
-    //    { 
-    //        feedbackDisplayText.text = File.ReadAllText(feedbackFilePath);
-    //    }
-    //}
-
-    public void CreateFeedbackCard(string feedbackText)
+    public void CreateFeedbackCard(string feedbackText, string playerName)
     {
         GameObject feedbackCard = Instantiate(feedbackCardPrefab, transform.position, transform.rotation);
         feedbackDisplayText = feedbackCard.transform.GetChild(0).GetComponent<TMP_Text>();
         feedbackDisplayText.text = feedbackText;
+
+        playerNameDisplayText = feedbackCard.transform.GetChild(2).GetComponent<TMP_Text>();
+        playerNameDisplayText.text = playerName;
 
         feedbackCard.transform.SetParent(contentParentObject.transform, false); // Setting as child with `worldPositionStays` false
         feedbackCard.transform.localScale = Vector3.one; // Ensure scale is (1,1,1)
 
         DisplayFeedbackCount();
 
-        //LoadFeedback();
     }
 
 }
