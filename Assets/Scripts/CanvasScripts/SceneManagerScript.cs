@@ -74,6 +74,11 @@ public class SceneManagerScript : MonoBehaviour
         //pausePanel.SetActive(false);
     }
 
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0); //Load main menu
+    }
+
     public void QuitGame()
     {
         Application.Quit();

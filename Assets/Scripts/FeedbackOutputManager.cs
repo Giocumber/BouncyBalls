@@ -18,9 +18,6 @@ public class FeedbackOutputManager : MonoBehaviour
     {
         feedbackTitle = GameObject.Find("FeedbackTitle").GetComponent<TMP_Text>();
         DisplayFeedbackCount();
-
-        //feedbackFilePath = Application.persistentDataPath + "/feedback.txt"; //creates a file
-        //ClearFeedback();
     }
 
     private void DisplayFeedbackCount()
@@ -44,7 +41,6 @@ public class FeedbackOutputManager : MonoBehaviour
         feedbackCard.transform.localScale = Vector3.one; // Ensure scale is (1,1,1)
 
         DisplayFeedbackCount();
-
     }
 
 }
