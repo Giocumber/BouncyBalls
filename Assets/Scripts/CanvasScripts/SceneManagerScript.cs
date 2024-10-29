@@ -48,7 +48,11 @@ public class SceneManagerScript : MonoBehaviour
     public void LoadNextScene()
     {
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        SceneManager.LoadScene(nextSceneIndex);
+
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+            SceneManager.LoadScene(nextSceneIndex);
+        else
+            SceneManager.LoadScene(0); //Load main menu
     }
 
     public void Restart()
