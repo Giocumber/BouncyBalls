@@ -76,6 +76,7 @@ public class SceneManagerScript : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0); //Load main menu
     }
 

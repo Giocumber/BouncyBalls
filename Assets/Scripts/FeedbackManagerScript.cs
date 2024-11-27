@@ -5,6 +5,12 @@ using UnityEngine;
 public class FeedbackManagerScript : MonoBehaviour
 {
     private static FeedbackManagerScript instance;
+    //public SaveGameObjectState saveGameObjectState;
+
+    private void Start()
+    {
+        // saveGameObjectState.LoadState();
+    }
 
     void Awake()
     {

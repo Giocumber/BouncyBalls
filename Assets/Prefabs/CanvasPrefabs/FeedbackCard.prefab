@@ -66,7 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: new ts
+  m_text: Dhan pa play test ako tas chat ka sakuya kung ano maray. Kung lingawan
+    ko na sya or hanapon ko pa. Sabihon mo sakuya kung nahirapan ka or sakto lang.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d57b3d500c77c0d4bbd67c7edd3e4809, type: 2}
   m_sharedMaterial: {fileID: -1792865961093446025, guid: d57b3d500c77c0d4bbd67c7edd3e4809, type: 2}

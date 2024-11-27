@@ -39,6 +39,7 @@ public class FeedbackOutputManager : MonoBehaviour
 
         feedbackCard.transform.SetParent(contentParentObject.transform, false); // Setting as child with `worldPositionStays` false
         feedbackCard.transform.localScale = Vector3.one; // Ensure scale is (1,1,1)
+        //DontDestroyOnLoad(feedbackCard);
 
         DisplayFeedbackCount();
     }

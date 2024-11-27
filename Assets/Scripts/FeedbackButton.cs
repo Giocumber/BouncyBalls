@@ -5,27 +5,28 @@ using UnityEngine.UI;
 
 public class FeedbackButton : MonoBehaviour
 {
-    public Button myButton; // Assign in the Inspector or find by script
-    public string targetObjectName; // Set the name of the GameObject to enable
+    private Button myButton; // Assign in the Inspector or find by script
+    public string parentObjectTag; // Set the name of the GameObject to enable
 
     // Start is called before the first frame update
     void Start()
     {
+        myButton = GetComponent<Button>();
         myButton.onClick.AddListener(() => EnableGameObject());
     }
 
     void EnableGameObject()
     {
-        GameObject targetObject = GameObject.Find(targetObjectName);
+        GameObject parentObject = GameObject.FindGameObjectWithTag(parentObjectTag);
 
-        if (targetObject != null)
+        if (parentObject != null)
         {
-            targetObject.SetActive(true); // Enable the GameObject
-            Debug.Log($"{targetObject.name} has been enabled.");
+            Transform targetObject = parentObject.transform.GetChild(1);
+            targetObject.gameObject.SetActive(true); // Enable the GameObject
         }
         else
         {
-            Debug.LogWarning($"GameObject '{targetObjectName}' not found!");
+            Debug.LogWarning($"GameObject not found!");
         }
     }
 }

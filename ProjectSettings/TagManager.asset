@@ -10,6 +10,7 @@ TagManager:
   - Key
   - Door
   - Acorn
+  - FeedbackManager
   layers:
   - Default
   - TransparentFX

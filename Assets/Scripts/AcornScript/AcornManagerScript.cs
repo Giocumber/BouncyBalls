@@ -8,6 +8,11 @@ public class AcornManagerScript : MonoBehaviour
     private float spawnAcornTimer = 2;
     public GameObject acornPrefab;
 
+    private void Awake()
+    {
+        timer = 0f;
+    }
+
     // Update is called once per frame
     void Update()
     {

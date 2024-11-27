@@ -12,9 +12,13 @@ public class PlayerJump : MonoBehaviour
     public LayerMask whatIsGround;       // Layer of ground
     public bool isGrounded;             // Is the player grounded
 
+    public GameObject jumpVfx;
+    private AudioManager audioManager;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();  // Get the Rigidbody2D component
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     void Update()
@@ -25,6 +29,9 @@ public class PlayerJump : MonoBehaviour
         // Jump when the player presses the space key and is grounded
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
+            audioManager.PlaySFX(audioManager.playerJumpSFX);
+            Vector3 jumpVFXPosition = transform.position + new Vector3(0f, 0.5f, 0f);
+            Instantiate(jumpVfx, jumpVFXPosition, Quaternion.identity);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);  // Apply jump force
         }
 
